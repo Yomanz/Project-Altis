@@ -1,0 +1,34 @@
+Everything in here is subject to change it's just my thoughts over the last day or so
+Decide on DB layout
+  -basic user details table
+  -sessions table (for tracking who's logged in and such)
+  -game data like the player's servers reside in another table
+  -NPCs get their own table
+    -resetting them needs extra data, can just pull from database rather than hardcoding it, more flexible that way and easier to modify. 
+      -maybe a "defaultNPC" table alongside the active "NPC" table?
+# Create utility PHP functions for interacting with the database etc that can be imported to .
+  -general tools
+    -clean input text?
+    -more things I haven't thought of yet
+    
+  -user tools (doing some of this now)
+    -check user exists
+      -by name
+      -by email
+    -create user
+      -need to create game data immediately or when they actually go to the game?
+        -second option might make it easier on round resets, just delete all the player game data and regenerate it when they log in
+    -delete user
+      -remember to delete their game data too
+    -sessions
+      -login
+      -logout
+      -check status of login
+        -automatic logout
+          -dependant on some 'keep me signed in' checkbox?
+    
+  -game logic tools
+    -linking between user table and game data
+    -idk this is far down the line from now I'll burn that bridge when I get to it
+    
+    
