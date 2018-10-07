@@ -101,7 +101,7 @@ render();
 </script>
 
 
-
+<example-component></example-component>
 
 
 
