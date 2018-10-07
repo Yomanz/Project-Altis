@@ -18,7 +18,7 @@ $site_config = new SiteConfig();
 	<div id="login-register">
 		<div class="form column" id=register>
 			<center>
-			<form action="/login.php" method="POST" id=reg>
+			<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" id=reg>
 				<h3>Register</h3>
 				<label>Username</label><br>
 				<label class=formhint>a-Z, 0-9, - and _</label><br>
@@ -35,7 +35,7 @@ $site_config = new SiteConfig();
 		</div>
 		<div class="form column" id=login>
 			<center>
-			<form action="/login.php" method="POST" id=log>
+			<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" id=log>
 				<h3>Already have an account?</h3>
 				<h3>Login</h3>
 				<label>Username</label><br>
