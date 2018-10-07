@@ -104,41 +104,7 @@ render();
 
 
 
-<?php
-function errorHandling($error) {
-	echo "<h1>An internal error has occured</h1>";
-	echo "<p>Please report this to an administrator:</p>";
-	echo "<p class='errortext'>" . $error . "</p>";
-	die();
-} 
 
-$servername = "localhost";
-$username = "root";
-$password = "K3wagrju";
-$DB = "dumbstuff";
-$conn = new mysqli($servername, $username, $password, $DB);
-$twat = $_SERVER['REMOTE_ADDR'];
-
-
-$sql1 = "select * from fuckoff where address='" . $twat . "'";
-$result1 = $conn->query($sql1);
-
-
-if ($conn->connect_error) {             //check mysql didn't keel over and die
-    errorHandling($conn->connect_error);
-}
-$row1 = $result1->fetch_assoc();
-
-if($result1->num_rows == 0) {
-	$sql2 = "INSERT INTO fuckoff (address, offences) VALUES ('" . $twat . "', 1)";
-	$result2 = $conn->query($sql2);
-} else { //repeat offender!
-	$count = $row1['offences'] + 1;
-	$sql3 = "UPDATE fuckoff SET `offences` = $count WHERE `address` = '$twat'";
-	$result3 = $conn->query($sql3);
-}
-
-?>
 
 
 </body>
