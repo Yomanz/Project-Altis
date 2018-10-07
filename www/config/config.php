@@ -10,7 +10,7 @@ class DBConfig {
 	function __construct() {
 		$this->DBName = "Altis";
 		$this->DBUser = "root";
-		$this->DBPass = "fakepass123";
+		$this->DBPass = "REDACTED";
 		$this->DBServer = "localhost";
 	}
 }
